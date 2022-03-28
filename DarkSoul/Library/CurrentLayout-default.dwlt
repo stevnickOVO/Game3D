@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -113,10 +113,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 709, y: 471}
+  m_MaxSize: {x: 18004, y: 14021}
   vertical: 0
-  controlID: 424
+  controlID: 1532
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,10 +138,10 @@ MonoBehaviour:
     y: 0
     width: 395
     height: 731
-  m_MinSize: {x: 231, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+  m_MinSize: {x: 231, y: 471}
+  m_MaxSize: {x: 10001, y: 14021}
   vertical: 1
-  controlID: 357
+  controlID: 1615
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 425
+  controlID: 1533
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
     m_Text: Asset Store
-    m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -7444545952099596278, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -355,9 +355,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2c3d0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 30fbffff
+      m_ExpandedIDs: 68fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -420,34 +420,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/DogKnight/Animations
+    - Assets/Mini Legion Rock Golem PBR HP Polyart/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 48
   m_LastFolders:
-  - Assets/DogKnight/Animations
+  - Assets/Mini Legion Rock Golem PBR HP Polyart/Prefabs
   m_LastFoldersGridSize: 48
   m_LastProjectPath: D:\unity\GitHub\Game3D\DarkSoul
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 103d0000
-    m_LastClickedID: 15632
-    m_ExpandedIDs: 00000000f23c0000183d000000ca9a3b
+    m_SelectedIDs: 404d0000
+    m_LastClickedID: 19776
+    m_ExpandedIDs: 00000000f233000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: DogKnight
-      m_OriginalName: DogKnight
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15640
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -461,7 +461,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f23c000000ca9a3b
+    m_ExpandedIDs: 00000000f2330000f833000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -553,9 +553,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -4.243368, y: -2.368833, z: 8.367647}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -4.243368, y: -2.368833, z: 8.367647}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -601,13 +601,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: -0.11777331, y: 0.1120611, z: -0.0133767575, w: -0.9866095}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: -0.11777331, y: 0.1120611, z: -0.0133767575, w: -0.9866095}
   m_Size:
-    m_Target: 10
+    m_Target: 7.238263
     speed: 2
-    m_Value: 10
+    m_Value: 7.238263
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: -6973158847631862895, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -660,16 +660,16 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
-    - {fileID: -834702311998698036, guid: d08f705dd56e93843986127859935aad, type: 2}
+    - {fileID: 1107905649089028422, guid: b60dc9aa529b314489f628aa3b57c470, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1
+    - e00: 0.596919
       e01: 0
       e02: 0
-      e03: 0
+      e03: -195.05008
       e10: 0
-      e11: 1
+      e11: 0.596919
       e12: 0
-      e13: 0
+      e13: 86.32008
       e20: 0
       e21: 0
       e22: 1
@@ -679,10 +679,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: d08f705dd56e93843986127859935aad,
+  m_AnimatorController: {fileID: 9100000, guid: b60dc9aa529b314489f628aa3b57c470,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -834702311998698036, guid: d08f705dd56e93843986127859935aad,
+  - m_Target: {fileID: 1107905649089028422, guid: b60dc9aa529b314489f628aa3b57c470,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Navigation
-    m_Image: {fileID: 7874161543223113035, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 1087843850482249999, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:

@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6964221677996053826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2625066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.0031914e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.18028772
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066896392038628118, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_Name
+      value: DogPolyart
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2066896392029128874, guid: 45288819fde2143449a96207b14db0bb, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 45288819fde2143449a96207b14db0bb, type: 3}
