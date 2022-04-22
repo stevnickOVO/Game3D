@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControllor : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerControllor : MonoBehaviour
     [SerializeField] private float dashColdDown;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject groundCheck;
+    [SerializeField] Image HPbar;
+    [HideInInspector]public bool useSwordHitBox;
     float dashColdTimeCur;
     int   attackCount;
     float gravity = -18f;
@@ -24,6 +27,7 @@ public class PlayerControllor : MonoBehaviour
         parameter = GetComponent<PlayerParameter>();
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        useSwordHitBox = false;
     }
     private void Update()
     {
@@ -103,14 +107,24 @@ public class PlayerControllor : MonoBehaviour
     {
         attacking = false;
     }
-    public void getdamage()
+    public void swordHitBox()
     {
-        animator.SetBool("getHit", true);
+        useSwordHitBox = !useSwordHitBox;
     }
-    public void youDead()
+    public void getdamage(int damage)
     {
-        isDie = true;
-        animator.SetBool("Die",isDie);
+        parameter.CurrHp -= damage;
+        animator.SetBool("getHit", true);
+        HPbar.fillAmount = (float)parameter.CurrHp / (float)parameter.MaxHP;
+        if (parameter.CurrHp <= 0)
+        {
+            isDie = true;
+            animator.SetBool("Die", isDie);
+        }
+    }
+    public int totleAttack()
+    {
+        return parameter.AttackVaule;
     }
     
 }

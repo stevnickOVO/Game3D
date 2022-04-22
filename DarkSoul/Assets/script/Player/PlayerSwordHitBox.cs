@@ -5,16 +5,18 @@ using UnityEngine;
 public class PlayerSwordHitBox : MonoBehaviour
 {
     PlayerControllor HitBoxFather;
+    gameManager manager;
     private void Awake()
     {
         HitBoxFather = gameObject.transform.parent.parent.parent.GetComponent<PlayerControllor>();
-        print(HitBoxFather.name);
+        manager = GameObject.Find("GameManager").gameObject.GetComponent<gameManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy"&& HitBoxFather.useSwordHitBox)
         {
-            other.GetComponent<EnemyMovetion>().getDanage();
+            other.GetComponent<EnemyMovetion>().getDanage(HitBoxFather.totleAttack());
+            manager.EnemyUIControllor(other);
         }
     }
 }

@@ -8,15 +8,17 @@ public class EnemyMovetion : MonoBehaviour
 {
     [SerializeField] float findTargetRadius;
     [SerializeField] float attackRange;
-    [SerializeField] LayerMask targetMask;
+    [SerializeField] protected LayerMask targetMask;
     [SerializeField] GameObject target;
+    [SerializeField] EnemyPool enemyPool;
+    bool isDead;
     bool isAttack;
     enum enemyAction {idle,move,attack,die,getHit }
     enemyAction enemyState;
     Animator animator;
     NavMeshAgent agent;
-    EnemyParameter enemyParameter;
-    
+    protected EnemyParameter enemyParameter;
+    Action<EnemyPool> action;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -27,12 +29,18 @@ public class EnemyMovetion : MonoBehaviour
         enemyState = enemyAction.idle;
         target = gameObject;
         agent.stoppingDistance = attackRange;
+        isDead = false;
+        enemyPool = GameObject.Find("GameManager").GetComponent<EnemyPool>();
     }
 
     void Update()
     {
-        targetCheck();
-        attckTarget();
+        if (!isDead)
+        {
+            targetCheck();
+            attckTarget();
+        }
+        
         switchControllor();
     }
     public void switchControllor()
@@ -54,8 +62,7 @@ public class EnemyMovetion : MonoBehaviour
             case enemyAction.getHit:
                 break;
             case enemyAction.die:
-                animator.SetBool("isDie", true);
-                Destroy(gameObject, 1);
+                animator.SetBool("Die", true);
                 break;
         }
     }
@@ -89,17 +96,23 @@ public class EnemyMovetion : MonoBehaviour
             enemyState = enemyAction.move;
         }
     }
-    public void getDanage()
+    public void getDanage(int damage)
     {
-        print(transform.name+"受傷了");
-        animator.SetBool("GetHit",true);
+        enemyParameter.CurrHp -= damage;
+        animator.SetBool("getHit",true);
+        deadCheck();
     }
     public void deadCheck()
     {
         if (enemyParameter.CurrHp <= 0)
         {
+            isDead = true;
             enemyState = enemyAction.die;
         }
+    }
+    public void deadToPool()
+    {
+        enemyPool.releaseOB(gameObject);
     }
     private void OnDrawGizmos()
     {
