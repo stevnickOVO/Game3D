@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyParameter : MonoBehaviour
+public class EnemyParameter : Parameter
 {
-    public int MaxHP;
-    public int CurrHp;
-    public int AttackVaule;
     private void Awake()
     {
-        CurrHp = MaxHP;
+        CurrHP = MaxHP;
+    }
+    public override bool getDamage(int damage)
+    {
+        CurrHP -= damage;
+        if (CurrHP <= 0)
+        {
+            PlayerManager.playerManagerInstance.totleMoney += money;
+            GetComponent<EnemyMovetion>().deadToPool();
+        }
+        return GetComponent<EnemyMovetion>().deadCheck();
     }
 }

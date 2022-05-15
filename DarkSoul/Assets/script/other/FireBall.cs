@@ -24,7 +24,7 @@ public class FireBall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerControllor>().getdamage(attackVaule);
+            other.GetComponent<Parameter>().getDamage(attackVaule);
             Destroy(gameObject);
         }
     }

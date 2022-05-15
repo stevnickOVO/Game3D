@@ -879,9 +879,9 @@ GameObject:
   - component: {fileID: 7199960504301440678}
   - component: {fileID: 7113443856629428364}
   - component: {fileID: 7113443856629428365}
-  - component: {fileID: 1837318246179144}
   - component: {fileID: 1837318246179145}
-  m_Layer: 0
+  - component: {fileID: 6755846020047963615}
+  m_Layer: 10
   m_Name: TurtleShell
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -961,21 +961,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1837318246179144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115265715971607234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee4c91c03af38d14790864a94fbc462b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHP: 50
-  CurrHp: 0
-  AttackVaule: 10
 --- !u!114 &1837318246179145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,10 +978,26 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 512
-  target: {fileID: 0}
   enemyPool: {fileID: 0}
-  Range: 0.75
+  CastleRange: 4
+  Range: 3
   AttackPoint: {fileID: 1512888066}
+--- !u!114 &6755846020047963615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115265715971607234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4c91c03af38d14790864a94fbc462b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 50
+  CurrHP: 0
+  AttackVaule: 15
+  money: 7
 --- !u!1 &7115347039228449862
 GameObject:
   m_ObjectHideFlags: 0

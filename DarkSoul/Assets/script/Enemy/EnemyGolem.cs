@@ -9,10 +9,12 @@ public class EnemyGolem :EnemyMovetion
     
     public void attack()
     {
-        var colliders = Physics.OverlapSphere(AttackPoint.transform.position, Range, targetMask);
-        if (colliders.Length > 0)
-        {
-            colliders[0].GetComponent<PlayerControllor>().getdamage(enemyParameter.AttackVaule);
-        }
+        //if (target.GetComponent<Parameter>().getDamage(enemyParameter.AttackVaule))
+        //{
+        //    target = GameObject.Find("Castle").gameObject;
+        //    enemyState = enemyAction.move;
+        //    isAttack = false;
+        //}
+        target.SendMessage("getDamage", enemyParameter.AttackVaule);
     }
 }

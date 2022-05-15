@@ -11,36 +11,43 @@ public class PlayerControllor : MonoBehaviour
     [SerializeField] private float dashColdDown;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject groundCheck;
-    [SerializeField] Image HPbar;
+    [SerializeField] private GameObject startPoint;
+    [SerializeField] private Joystick joystick;
+    [SerializeField] private Button attackBTN;
+    [SerializeField] private Button dodgeBTN;
     [HideInInspector]public bool useSwordHitBox;
+    [SerializeField] private Text riseText;
+    float dieTime=15;
     float dashColdTimeCur;
     int   attackCount;
     float gravity = -18f;
     bool  attacking;
-    bool  isDie;
+    [HideInInspector]public bool  isDie;
     Vector3             gravityVectory=Vector3.zero;
     CharacterController characterController;
-    PlayerParameter     parameter;
+    Parameter     parameter;
     Animator            animator;
     private void Awake()
     {
-        parameter = GetComponent<PlayerParameter>();
+        parameter = GetComponent<Parameter>();
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         useSwordHitBox = false;
+        attackBTN.onClick.AddListener(Attack);
+        dodgeBTN.onClick.AddListener(Dash);
     }
     private void Update()
     {
         CharacterMovetion();
-        Attack();
-
-        if (Input.GetButtonDown("Jump")) StartCoroutine(PlayerDash());
+        dieTimeCount();
     }
     public void CharacterMovetion()
     {
-        if (!attacking && !isDie) {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+        if (!attacking && !isDie&&PlayerManager.playerManagerInstance.currBuild==null) {
+            float horizontal = joystick.Horizontal;
+            float vertical = joystick.Vertical;
+            if (horizontal > 0) horizontal = 1;
+            if (vertical > 0) vertical = 1;
 
             Vector3 dir = new Vector3(horizontal, 0, vertical).normalized;
             var move = dir * speed * Time.deltaTime;
@@ -59,19 +66,19 @@ public class PlayerControllor : MonoBehaviour
             int playerCurrSpeed = (horizontal != 0 || vertical != 0) ? 1 : 0;
             animator.SetFloat("Speed", playerCurrSpeed);
 
-            var PlayerPoint = Camera.main.WorldToScreenPoint(transform.position);
-            var point = Input.mousePosition - PlayerPoint;
-            float angle = Mathf.Atan2(point.x, point.y) * Mathf.Rad2Deg;
+            if(horizontal!=0&& vertical!=0)
+            {
+                float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
 
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, angle, transform.eulerAngles.z);
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, angle, transform.eulerAngles.z);
+            }
+            
         }
             
     }
     public void Attack()
     {
         if (!isDie) {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
                 attacking = true;
                 if (attackCount <= 0)
                 {
@@ -83,10 +90,14 @@ public class PlayerControllor : MonoBehaviour
                     animator.SetBool("Attack2", true);
                     attackCount = 0;
                 }
-            }
+            
         }
     }
-    IEnumerator PlayerDash()
+    public void Dash()
+    {
+        StartCoroutine(PlayerDash());
+    }
+    public IEnumerator PlayerDash()
     {
         if (!attacking && !isDie&& dashColdTimeCur < Time.time)
         {
@@ -106,25 +117,33 @@ public class PlayerControllor : MonoBehaviour
     public void AttackCancel()
     {
         attacking = false;
+        useSwordHitBox = false;
+    }
+    public void dieTimeCount()
+    {
+        if (isDie)
+        {
+            dieTime -= Time.deltaTime;
+            riseText.gameObject.SetActive(true);
+            riseText.text = "復活:"+ dieTime;
+            if (dieTime <= 0)
+            {
+                parameter.CurrHP = parameter.MaxHP;
+                isDie = false;
+                dieTime = 15;
+                animator.SetBool("Die", false);
+                transform.position = startPoint.transform.position;
+                gameObject.layer = LayerMask.NameToLayer("Player");
+            }
+        }
+        else riseText.gameObject.SetActive(false);
     }
     public void swordHitBox()
     {
-        useSwordHitBox = !useSwordHitBox;
-    }
-    public void getdamage(int damage)
-    {
-        parameter.CurrHp -= damage;
-        animator.SetBool("getHit", true);
-        HPbar.fillAmount = (float)parameter.CurrHp / (float)parameter.MaxHP;
-        if (parameter.CurrHp <= 0)
-        {
-            isDie = true;
-            animator.SetBool("Die", isDie);
-        }
+        useSwordHitBox = true;
     }
     public int totleAttack()
     {
         return parameter.AttackVaule;
     }
-    
 }

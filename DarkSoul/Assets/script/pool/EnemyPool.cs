@@ -7,6 +7,7 @@ using UnityEngine.Pool;
 public class EnemyPool : MonoBehaviour
 {
     [SerializeField] EnemyMovetion[] enemyList;
+    [SerializeField] int currEnemy;
     [SerializeField] int minAmount = 30;
     [SerializeField] int maxAmount = 500;
     ObjectPool<EnemyMovetion> objectPool;
@@ -17,7 +18,7 @@ public class EnemyPool : MonoBehaviour
     }
     private void Start()
     {
-        EnemyMovetion enemy = objectPool.Get();
+        //EnemyMovetion enemy = objectPool.Get();
     }
     private void desEnemy(EnemyMovetion obj)
     {
@@ -39,7 +40,15 @@ public class EnemyPool : MonoBehaviour
     }
     public EnemyMovetion createEnemy()
     {
-        EnemyMovetion enemy = Instantiate(enemyList[0],transform);
+        EnemyMovetion enemy = Instantiate(enemyList[currEnemy],transform);
         return enemy;
+    }
+    public void setEnemyCurList(int enemy)
+    {
+        currEnemy = enemy;
+    }
+    public int getEnemyListLentgh()
+    {
+        return enemyList.Length;
     }
 }

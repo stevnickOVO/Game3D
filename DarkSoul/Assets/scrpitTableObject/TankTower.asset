@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f6d032b56dd0e489769ef2b751ced8, type: 3}
+  m_Name: TankTower
+  m_EditorClassIdentifier: 
+  cost: 20
+  mercenaryObject: {fileID: 8503874360185755379, guid: 96f7090da24186a45bb59b092bf90b24,
+    type: 3}
+  statue: {fileID: 958777568966578247, guid: a020d6cb42155dd40ab8271f967ab9ea, type: 3}

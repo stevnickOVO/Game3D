@@ -15,7 +15,7 @@ public class PlayerSwordHitBox : MonoBehaviour
     {
         if (other.tag == "Enemy"&& HitBoxFather.useSwordHitBox)
         {
-            other.GetComponent<EnemyMovetion>().getDanage(HitBoxFather.totleAttack());
+            other.GetComponent<Parameter>().getDamage(HitBoxFather.totleAttack());
             manager.EnemyUIControllor(other);
         }
     }
